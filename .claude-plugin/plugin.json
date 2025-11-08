@@ -1,6 +1,6 @@
 {
-  "name": "plugin-creator",
-  "description": "Convert your .claude/ directory into a distributable plugin with /create-plugin command - detects contents, asks for info, creates correct structure automatically",
+  "name": "das-hirn",
+  "description": "Personal Claude Code extension with custom rules, subagents, and workflows tailored for my coding style",
   "version": "1.0.0",
   "author": {
     "name": "Alexander Opalic"
