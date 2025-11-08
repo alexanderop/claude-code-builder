@@ -98,9 +98,9 @@ The `dev-marketplace` is already set up with the correct structure pointing to t
 ### Manual Installation
 
 ```bash
-# Clone or download this repository
+# Clone the repository
 cd ~/your-plugins
-git clone <repository-url>
+git clone https://github.com/alexanderop/claude-code-create-toolkit.git
 
 # Create a local marketplace
 mkdir my-marketplace
@@ -214,9 +214,15 @@ Contributions welcome! If you find issues or have suggestions:
 2. Create a detailed bug report or feature request
 3. Submit pull requests with clear descriptions
 
+## Repository
+
+https://github.com/alexanderop/claude-code-create-toolkit
+
 ## License
 
-[Add your license here]
+MIT License - See [LICENSE](LICENSE) for details.
+
+This is truly open source software - anyone can use, modify, and distribute it freely.
 
 ## Version History
 
