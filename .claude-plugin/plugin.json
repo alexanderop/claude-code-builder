@@ -1,6 +1,6 @@
 {
-  "name": "skill-claude-plugin",
-  "description": "A skill that guides you through creating Claude Code plugins with correct structure, mandatory testing workflow, and prevents common mistakes",
+  "name": "plugin-creator",
+  "description": "Convert your .claude/ directory into a distributable plugin with /create-plugin command - detects contents, asks for info, creates correct structure automatically",
   "version": "1.0.0",
   "author": {
     "name": "Alexander Opalic"
