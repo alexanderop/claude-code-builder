@@ -40,7 +40,7 @@ When the PR is **merged into `main`**, the marketplace manifest already points t
 **2) Install the plugin from this marketplace:**
 
 ```bash
-/plugin install claude-code-builder@claude-code-builder-dev
+/plugin install claude-code-builder@claude-code-builder
 ```
 
 ### Verify Installation
