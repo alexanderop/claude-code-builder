@@ -15,7 +15,6 @@ This plugin provides slash commands to create:
 - **Plugins** - Distributable Claude Code packages (`/create-plugin`)
 - **Documentation** - Project CLAUDE.md files (`/claude-md`)
 - **Output Styles** - Custom Claude response formatting (`/claude-output-style`)
-- **Publishing** - Publish plugins to marketplaces (`/publish-claude-plugin`)
 
 ## Available Commands
 
@@ -67,13 +66,6 @@ Configure the user's Claude Code status line setting.
 Customize how Claude presents information and responses to match your preferences.
 
 **Usage:** `/claude-output-style`
-
-### `/publish-claude-plugin`
-Publish your Claude Code plugin to a marketplace.
-
-Reads plugin metadata from `.claude-plugin/plugin.json` and automates the publication process including git tagging and repository updates.
-
-**Usage:** `/publish-claude-plugin [marketplace-name]`
 
 ## Installation
 
@@ -160,9 +152,6 @@ After installation, simply invoke any of the creation commands:
 
 # Configure output style
 /claude-output-style
-
-# Publish plugin to marketplace
-/publish-claude-plugin my-marketplace
 ```
 
 Each command will guide you through the creation process with questions about:
@@ -196,8 +185,7 @@ claude-code-builder/
 │   ├── claude-hook.md           # Hook creation guide
 │   ├── create-plugin.md         # Plugin creation guide
 │   ├── claude-md.md             # CLAUDE.md generation
-│   ├── claude-output-style.md   # Output style configuration
-│   └── publish-claude-plugin.md # Plugin publishing automation
+│   └── claude-output-style.md   # Output style configuration
 ├── .claude/                     # Local development config
 │   ├── commands/                # Original command source
 │   └── settings.local.json      # Tool permissions

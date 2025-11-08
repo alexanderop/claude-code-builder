@@ -12,7 +12,6 @@
     "claude-hook",
     "create-plugin",
     "claude-md",
-    "claude-output-style",
-    "publish-claude-plugin"
+    "claude-output-style"
   ]
 }
