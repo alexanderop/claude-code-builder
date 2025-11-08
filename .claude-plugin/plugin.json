@@ -6,9 +6,6 @@
     "name": "Alexander Opalic",
     "url": "https://github.com/alexanderop/claude-code-builder"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/alexanderop/claude-code-builder"
-  },
+  "repository": "https://github.com/alexanderop/claude-code-builder",
   "license": "MIT"
 }

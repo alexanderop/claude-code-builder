@@ -25,7 +25,9 @@ Guide users through converting an existing project into a properly structured Cl
      - name (lowercase, kebab-case)
      - description
      - version (semantic versioning)
-     - author information
+     - author information (object with name and optional url)
+     - repository (string URL, not object)
+     - license (optional)
    - Generate `marketplace.json` in the same directory with:
      - marketplace name
      - owner information
@@ -72,6 +74,26 @@ my-plugin/
 └── README.md                # Documentation
 ```
 
+## Plugin Manifest Template
+
+The plugin.json file MUST be created at `<plugin-dir>/.claude-plugin/plugin.json`:
+
+```json
+{
+  "name": "plugin-name",
+  "version": "1.0.0",
+  "description": "Plugin description",
+  "author": {
+    "name": "Author Name",
+    "url": "https://github.com/username"
+  },
+  "repository": "https://github.com/username/plugin-name",
+  "license": "MIT"
+}
+```
+
+**Important:** The `repository` field must be a string URL, not an object. Using an object format like `{"type": "git", "url": "..."}` will cause validation errors.
+
 ## Marketplace Manifest Template
 
 The marketplace.json file MUST be created at `<plugin-dir>/.claude-plugin/marketplace.json` alongside plugin.json:
@@ -104,6 +126,7 @@ The marketplace.json file MUST be created at `<plugin-dir>/.claude-plugin/market
 ## Constraints
 - Must create valid plugin.json schema in .claude-plugin/ directory
 - Must create valid marketplace.json schema in the same .claude-plugin/ directory
+- The repository field in plugin.json MUST be a string URL, not an object
 - Follow kebab-case naming conventions
 - Include proper frontmatter in all markdown files
 - Marketplace source must reference "./" to point to the plugin directory itself
