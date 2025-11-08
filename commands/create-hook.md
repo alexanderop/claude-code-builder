@@ -3,7 +3,7 @@ description: Create and configure Claude Code hooks with reference documentation
 argument-hint: [hook-type] [matcher] [command]
 ---
 
-# /claude-hook
+# /create-hook
 
 ## Purpose
 Create and configure Claude Code hooks with reference documentation and interactive guidance.
@@ -143,19 +143,19 @@ Create and configure Claude Code hooks with reference documentation and interact
 
 **Interactive mode:**
 ```bash
-/claude-hook
+/create-hook
 # Shows menu of hook types and common use cases
 ```
 
 **Guided mode:**
 ```bash
-/claude-hook PreToolUse
+/create-hook PreToolUse
 # Guides through creating a PreToolUse hook
 ```
 
 **Direct mode:**
 ```bash
-/claude-hook PreToolUse "Bash" "jq -r '.tool_input.command' >> ~/.claude/commands.log"
+/create-hook PreToolUse "Bash" "jq -r '.tool_input.command' >> ~/.claude/commands.log"
 # Creates hook configuration directly
 ```
 

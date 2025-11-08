@@ -3,7 +3,7 @@ description: Generate custom output styles that modify Claude Code's system prom
 argument-hint: [style-name] [--user|--project] [--description "..."]
 ---
 
-# /claude-output-style
+# /create-output-style
 
 ## Purpose
 Generate custom output style files for Claude Code with proper structure and YAML frontmatter.
@@ -70,19 +70,19 @@ You are an interactive CLI tool that helps users with software engineering tasks
 
 **Example 1: Basic usage**
 ```bash
-/claude-output-style
+/create-output-style
 # Claude will ask for style name and description interactively
 ```
 
 **Example 2: Full specification**
 ```bash
-/claude-output-style "Teaching Assistant" --project --description "Explains concepts step by step with examples"
+/create-output-style "Teaching Assistant" --project --description "Explains concepts step by step with examples"
 # STATUS=OK PATH=.claude/output-styles/teaching-assistant.md SCOPE=project
 ```
 
 **Example 3: User-level style**
 ```bash
-/claude-output-style "Code Reviewer" --user --description "Focuses on thorough code review with best practices"
+/create-output-style "Code Reviewer" --user --description "Focuses on thorough code review with best practices"
 # STATUS=OK PATH=~/.claude/output-styles/code-reviewer.md SCOPE=user
 ```
 

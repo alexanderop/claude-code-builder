@@ -3,7 +3,7 @@ description: Generate CLAUDE.md files for project and key subdirectories
 argument-hint: [thoroughness: quick|medium|very-thorough]
 ---
 
-# /claude-md
+# /create-md
 
 ## Purpose
 Analyze project structure using the Explore subagent and generate CLAUDE.md files—one global file describing the project in general, plus nested CLAUDE.md files in important subdirectories for localized context.
@@ -104,11 +104,11 @@ Next.js 14, TypeScript, TailwindCSS
 ## Example usage
 ```bash
 # Quick exploration and basic CLAUDE.md files
-/claude-md quick
+/create-md quick
 
 # Medium depth (default)
-/claude-md
+/create-md
 
 # Very thorough analysis with comprehensive CLAUDE.md files
-/claude-md very-thorough
+/create-md very-thorough
 ```

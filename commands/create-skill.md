@@ -3,7 +3,7 @@ description: Generate a new Claude Skill with proper structure and YAML frontmat
 argument-hint: [skill-name] [description]
 ---
 
-# /claude-skill
+# /create-skill
 
 ## Purpose
 Generate a new Claude Skill with proper structure and YAML frontmatter using official documentation as reference
@@ -88,17 +88,17 @@ Generate a new Claude Skill with proper structure and YAML frontmatter using off
 
 **Basic skill:**
 ```bash
-/claude-skill commit-helper "Generate clear git commit messages from diffs. Use when writing commits or reviewing staged changes."
+/create-skill commit-helper "Generate clear git commit messages from diffs. Use when writing commits or reviewing staged changes."
 ```
 
 **Project skill with examples:**
 ```bash
-/claude-skill pdf-processor "Extract text and tables from PDF files. Use when working with PDFs, forms, or document extraction." --project --with-examples
+/create-skill pdf-processor "Extract text and tables from PDF files. Use when working with PDFs, forms, or document extraction." --project --with-examples
 ```
 
 **Skill with reference docs:**
 ```bash
-/claude-skill api-client "Make REST API calls and handle responses. Use for API testing and integration work." --with-reference
+/create-skill api-client "Make REST API calls and handle responses. Use for API testing and integration work." --with-reference
 ```
 
 ## Reference

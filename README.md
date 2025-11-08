@@ -50,13 +50,13 @@ When the PR is **merged into `main`**, the marketplace manifest already points t
 ```bash
 /help
 # Should see:
-# /claude-skill            - Create an auto-invoked Skill with best practices
+# /create-skill            - Create an auto-invoked Skill with best practices
 # /create-agent            - Create a subagent with focused role/tools
 # /create-command          - Generate a slash command (explicit invocation)
-# /claude-hook             - Configure event-driven hooks (pre/post tool use, etc.)
+# /create-hook             - Configure event-driven hooks (pre/post tool use, etc.)
 # /create-plugin           - Package a .claude/ setup into a plugin
-# /claude-md               - Generate CLAUDE.md files (project awareness)
-# /claude-output-style     - Create/activate custom Output Styles
+# /create-md               - Generate CLAUDE.md files (project awareness)
+# /create-output-style     - Create/activate custom Output Styles
 ```
 
 > Tip: If commands don’t appear, run `/help` again or restart Claude Code, then re-run the install command.
@@ -67,13 +67,13 @@ When the PR is **merged into `main`**, the marketplace manifest already points t
 
 | Command                | Purpose (1-liner)                                                                 | Typical usage example                                                          |
 | ---------------------- | --------------------------------------------------------------------------------- | ------------------------------------------------------------------------------ |
-| `/claude-skill`        | Scaffold a **model-invoked Skill** Claude auto-discovers from context.            | `/claude-skill commit-helper "Generate helpful git commit messages"`           |
+| `/create-skill`        | Scaffold a **model-invoked Skill** Claude auto-discovers from context.            | `/create-skill commit-helper "Generate helpful git commit messages"`           |
 | `/create-agent`        | Create a **subagent** with a focused role and optional tool/model settings.       | `/create-agent reviewer "Expert code reviewer; use proactively after changes"` |
 | `/create-command`      | Add a **slash command** for repeatable workflows you invoke explicitly.           | `/create-command analyze-deps "Analyze dependencies for outdated packages"`    |
-| `/claude-hook`         | Configure **event hooks** (pre/post tool use, prompt submit, etc.) with JSON/CLI. | `/claude-hook PreToolUse "Bash" "jq -r '.tool_input.command' >> ~/.log"`       |
+| `/create-hook`         | Configure **event hooks** (pre/post tool use, prompt submit, etc.) with JSON/CLI. | `/create-hook PreToolUse "Bash" "jq -r '.tool_input.command' >> ~/.log"`       |
 | `/create-plugin`       | Turn a `.claude/` setup into a **distributable plugin** with manifests.           | `/create-plugin`                                                               |
-| `/claude-md`           | Generate root & nested **CLAUDE.md** files that teach Claude your project.        | `/claude-md medium`                                                            |
-| `/claude-output-style` | Create/activate **Output Styles** (stored system prompts) for different modes.    | `/claude-output-style "Teaching Assistant" --project --description "...“`      |
+| `/create-md`           | Generate root & nested **CLAUDE.md** files that teach Claude your project.        | `/create-md medium`                                                            |
+| `/create-output-style` | Create/activate **Output Styles** (stored system prompts) for different modes.    | `/create-output-style "Teaching Assistant" --project --description "..."`      |
 
 > Each command opens a guided flow and prints the exact files/paths it creates.
 
@@ -83,8 +83,8 @@ When the PR is **merged into `main`**, the marketplace manifest already points t
 
 ```bash
 # Skill (auto-invoked by Claude)
-#/claude-skill [skill-name] "[what it does and when to use it]"
-/claude-skill commit-helper "Generate clear commit messages; use when committing or reviewing staged changes."
+#/create-skill [skill-name] "[what it does and when to use it]"
+/create-skill commit-helper "Generate clear commit messages; use when committing or reviewing staged changes."
 
 # Subagent (focused role)
 #/create-agent [name] "[when to invoke]" [--tools ...] [--model ...]
@@ -94,16 +94,16 @@ When the PR is **merged into `main`**, the marketplace manifest already points t
 /create-command analyze-deps "Analyze dependencies for outdated packages"
 
 # Hook (automate on events)
-/claude-hook PreToolUse "Edit|Write" "python3 .scripts/block_sensitive_edits.py"
+/create-hook PreToolUse "Edit|Write" "python3 .scripts/block_sensitive_edits.py"
 
 # Package your setup as a plugin
 /create-plugin
 
 # Project awareness docs for Claude
-/claude-md very-thorough
+/create-md very-thorough
 
 # Output style for non-default workflows
-/claude-output-style "Teaching Assistant" --project --description "Explains step by step with examples"
+/create-output-style "Teaching Assistant" --project --description "Explains step by step with examples"
 ```
 
 ---
@@ -135,13 +135,13 @@ claude-code-builder/
 │   ├── plugin.json              # Plugin manifest (name, version, repo, license)
 │   └── marketplace.json         # Local marketplace for dev/testing
 ├── commands/                    # All slash-command sources (Markdown with frontmatter)
-│   ├── claude-skill.md
+│   ├── create-skill.md
 │   ├── create-agent.md
 │   ├── create-command.md
-│   ├── claude-hook.md
+│   ├── create-hook.md
 │   ├── create-plugin.md
-│   ├── claude-md.md
-│   └── claude-output-style.md
+│   ├── create-md.md
+│   └── create-output-style.md
 ├── README.md
 ├── LICENSE
 └── .gitignore
@@ -174,7 +174,7 @@ claude-code-builder/
 User-level content goes under `~/.claude/...`; project-level content under `.claude/...`. Commands print exact paths.
 
 **Can I block risky actions?**
-Yes — use `PreToolUse` hooks that exit with code `2` to block operations (see `/claude-hook` examples).
+Yes — use `PreToolUse` hooks that exit with code `2` to block operations (see `/create-hook` examples).
 
 **How do I share with my team?**
 Use `/create-plugin` to package your `.claude/` config and add it to a marketplace repo; teammates run the two install commands.
